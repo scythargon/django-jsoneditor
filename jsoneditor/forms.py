@@ -37,7 +37,7 @@ class JSONEditor(Textarea):
     def render(self, name, value, attrs=None):
         if not isinstance(value,basestring):
            value = json.dumps(value)
-        input_attrs = {'hidden':True}
+        input_attrs = {'style':'display:none;'}
         input_attrs.update(attrs)
         if not 'class' in input_attrs:
             input_attrs['class'] = 'for_jsoneditor'

@@ -22,10 +22,11 @@ django.jQuery(function() {
             $f.parent().append($nxt);
             var fnc = function(f,nxt,value) {
                 var editor = new jsoneditor.JSONEditor(nxt,{
-                    change:function() {
+                    onChange:function() {
                         f.value = JSON.stringify(editor.get());
                     },
                 },value);
+                editor.expandAll();
             }($f[0],$nxt[0],value);
         }
     },10);
